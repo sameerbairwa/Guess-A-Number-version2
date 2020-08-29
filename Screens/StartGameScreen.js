@@ -7,6 +7,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   Alert,
+  Dimensions, // this is used for find how much width available
 } from "react-native";
 import Card from "../components/Card";
 import Colors from "../constants/Colors";
@@ -51,9 +52,9 @@ const StartGameScreen = (props) => {
       <Card style={styles.summaryContainer}>
         <BodyText>You Selected </BodyText>
         <NumberContainer> {selectedNumber} </NumberContainer>
-        <MainButton
-          onPress={() => props.onStartGame(selectedNumber)}
-        >START GAME</MainButton>
+        <MainButton onPress={() => props.onStartGame(selectedNumber)}>
+          START GAME
+        </MainButton>
       </Card>
     );
   }
@@ -115,8 +116,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   inputContainer: {
-    width: 300,
-    maxWidth: "80%",
+    width: "80%",
+    //maxWidth: "80%",
+    maxWidth: "95%",
+    minWidth: 300,
     alignItems: "center",
   },
   title: {
@@ -125,7 +128,10 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     fontFamily: "open-sans-bold",
   },
-  button: { width: 100 },
+  button: {
+    // width: 100
+    width: Dimensions.get("window").width / 4,
+  },
   summaryContainer: {
     marginTop: 20,
     alignItems: "center",
