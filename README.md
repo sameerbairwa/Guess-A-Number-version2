@@ -1,4 +1,5 @@
 # Guess-A-Number-version2
+# React-native game for ios and android
 
 How to use
 ---------
