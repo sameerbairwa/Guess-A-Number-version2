@@ -1,6 +1,6 @@
 # Guess-A-Number-version2
 Guess-A-Number game version 2
-How to use
+#How to use
 ---------
 
 You can use this attached file in two ways:
